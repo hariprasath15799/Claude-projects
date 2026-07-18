@@ -1,5 +1,4 @@
-import HeroCarousel from "@/components/HeroCarousel";
-import LeadForm from "@/components/LeadForm";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
@@ -28,19 +27,7 @@ export default function Home() {
 
         <div className="hero-inner">
           <div className="wrap hero-row">
-            <div className="hero-left">
-              <HeroCarousel />
-            </div>
-
-            <aside className="hero-right">
-              <div className="card">
-                <div className="card-head">
-                  <h2>Check how much you can get</h2>
-                  <p>Enter your mobile number. It takes less than a minute and your credit score is not affected.</p>
-                </div>
-                <LeadForm />
-              </div>
-            </aside>
+            <Hero />
           </div>
         </div>
       </section>

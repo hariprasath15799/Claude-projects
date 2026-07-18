@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-
 const SLIDES = [
   {
     eyebrow: "Loan against mutual funds",
@@ -15,27 +11,13 @@ const SLIDES = [
   },
 ];
 
-export default function HeroCarousel() {
-  const [active, setActive] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setActive((i) => (i + 1) % SLIDES.length);
-    }, 6000);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, []);
-
-  function goTo(index: number) {
-    setActive(index);
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setActive((i) => (i + 1) % SLIDES.length);
-    }, 6000);
-  }
-
+export default function HeroCarousel({
+  active,
+  onDotClick,
+}: {
+  active: number;
+  onDotClick: (index: number) => void;
+}) {
   return (
     <>
       <div className="slider">
@@ -65,13 +47,13 @@ export default function HeroCarousel() {
           className="dot"
           aria-label="Loan against mutual funds"
           aria-selected={active === 0}
-          onClick={() => goTo(0)}
+          onClick={() => onDotClick(0)}
         />
         <button
           className="dot"
           aria-label="Loan against securities"
           aria-selected={active === 1}
-          onClick={() => goTo(1)}
+          onClick={() => onDotClick(1)}
         />
       </div>
     </>

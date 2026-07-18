@@ -93,10 +93,70 @@ These figures were carried over from the original design as-is. None of them hav
 
 ---
 
+# Phase 2 — Connect the lead form to a real Supabase database
+
+The code side of Phase 2 is done: the eligibility form now calls a real database function (`submit_lead`) instead of faking success, UTM/referrer/landing-page tracking has been added invisibly, and a honeypot field guards against basic bots. None of this works yet because no Supabase project exists — that's the part only you can do (creating a cloud project needs your own account).
+
+## Step 4 — Create the Supabase project
+
+1. Go to `https://supabase.com/dashboard` and sign in (you said you already have an account).
+2. Click **New project**.
+3. Fill in:
+   - **Name**: something like `shriram-credit` (internal only, not shown to visitors).
+   - **Database password**: click **Generate a password** and **save it somewhere safe** (a password manager, not a text file in this repo). You likely won't need it day-to-day since we won't connect directly to Postgres, but it's needed if you ever use the CLI or a direct DB connection.
+   - **Region**: choose **South Asia (Mumbai) — ap-south-1**. This matters for data-residency reasons under India's DPDP Act, since this app stores Indian users' mobile numbers.
+     - **If project creation fails or hangs on this region** — Supabase has reported intermittent capacity issues specifically in Mumbai. If it fails after a minute or two, delete the failed project and retry once. If it fails again, fall back to **Southeast Asia (Singapore) — ap-southeast-1** (the next-closest region) and flag this to compliance/legal later — data residency expectations may differ and should be revisited once Mumbai capacity stabilizes.
+4. Click **Create new project**. This takes 1-2 minutes.
+5. **What you should see:** a project dashboard with a sidebar (Table Editor, SQL Editor, Authentication, etc.) and a green "Project is healthy" style status.
+
+## Step 5 — Run the database schema
+
+1. In the left sidebar, click **SQL Editor**.
+2. Click **New query**.
+3. Open `C:\Claude projects\supabase\migrations\0001_init.sql` in VS Code, copy its entire contents, and paste into the SQL editor.
+4. Click **Run** (or press Ctrl+Enter).
+5. **What you should see:** "Success. No rows returned" at the bottom. If you see a red error instead, stop and tell me the exact error text — don't re-run it repeatedly, since some statements (like `create table`) will fail loudly on a second run rather than silently skip.
+6. Confirm it worked: click **Table Editor** in the sidebar. You should see 6 tables: `admins`, `profiles`, `leads`, `loan_applications`, `partner_applications`, `grievances`. Click into `admins` — you should see one row with `hariprasath15799@gmail.com`.
+
+## Step 6 — Get your API keys
+
+1. In the sidebar, click the **gear icon (Project Settings)** → **API**.
+2. You'll see two values you need:
+   - **Project URL** — looks like `https://abcdefghijk.supabase.co`
+   - **anon / public key** — a long string starting with `eyJ...`
+3. **Do not copy the `service_role` key anywhere in this project.** It bypasses every security rule we just set up. This app's design deliberately never needs it — leave it alone in the dashboard.
+
+## Step 7 — Add the keys locally
+
+1. In VS Code, go to `C:\Claude projects\web\.env.local.example`, and make a copy of it named `.env.local` in the same folder (`web\.env.local`). This file is already gitignored, so it will never be committed.
+2. Fill in the two real values from Step 6:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=https://abcdefghijk.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...your real anon key...
+   ```
+3. If your local dev server is running, stop it (Ctrl+C in that PowerShell window) and restart it so it picks up the new file:
+   ```powershell
+   cd "C:\Claude projects\web"
+   npm run dev
+   ```
+4. **Test it:** open `http://localhost:3000`, enter a valid 10-digit mobile number (starting with 6-9), keep the consent box checked, click **Check my eligibility**. You should see "OTP sent to +91 XXXXXXXXXX..." — and in the Supabase dashboard's **Table Editor** → `leads` table, a new row should appear with that mobile number.
+
+## Step 8 — Add the same keys to Vercel (for the live site)
+
+Once your site is deployed on Vercel (Steps 2-3 above), the live site needs these same two values:
+
+1. Go to your project on `https://vercel.com/dashboard`.
+2. **Settings** → **Environment Variables**.
+3. Add both:
+   - `NEXT_PUBLIC_SUPABASE_URL` = same value as your `.env.local`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = same value as your `.env.local`
+4. After adding them, go to the **Deployments** tab, click the **⋯** menu on the most recent deployment, and click **Redeploy** — environment variable changes only take effect on a new deployment.
+5. **Test it:** visit your live `*.vercel.app` URL and repeat the same test from Step 7.4.
+
+---
+
 ## What's next
 
-Phase 2 will connect the lead-capture form to a real Supabase database. Before that starts, you'll need:
-- A Supabase account (you mentioned you already have one) — I'll walk you through creating the actual project in this file once we get there, including the exact region to pick and why.
-- The Resend (or similar) free-tier signup for outgoing email, needed before Phase 3's login testing.
+Phase 3 will add demo login (email-based OTP, using Supabase's built-in email code flow — no SMS cost, no DLT registration needed yet). Before that starts you'll need a free-tier account with a transactional email provider like Resend, since Supabase's own default mailer only allows 2 emails/hour, which you'd exhaust almost immediately while testing. I'll walk you through that signup and the Supabase Auth settings it plugs into when we get there.
 
 This file will be updated in place as each phase lands — re-open it any time rather than hunting for scattered instructions.
