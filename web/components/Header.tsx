@@ -13,7 +13,13 @@ export default async function Header() {
           <img src="/logo.jpg" alt="Shriram Credit" />
         </a>
         <nav className="main" aria-label="Primary">
-          <a href="#products">Loans</a>
+          <div className="nav-dropdown">
+            <a href="#products">Loans</a>
+            <div className="nav-dropdown-menu">
+              <a href="#products">Loan against mutual funds</a>
+              <a href="#products">Loan against shares</a>
+            </div>
+          </div>
           <a href="#calculators">Calculators</a>
           <a href="#faq">Discover Shriram</a>
           <a href="#investors">Investors</a>

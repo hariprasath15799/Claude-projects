@@ -50,6 +50,24 @@ nav.main a:hover::after{width:100%}
 .btn-dark:hover{background:var(--maroon)}
 .burger{display:none;background:none;border:1.5px solid var(--line);border-radius:var(--radius);padding:9px 11px}
 
+.nav-dropdown{position:relative}
+.nav-dropdown-menu{
+  position:absolute;top:100%;left:0;margin-top:10px;
+  background:#fff;border:1.5px solid var(--ink);border-radius:10px;
+  box-shadow:6px 6px 0 var(--yellow);
+  min-width:250px;padding:8px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .18s ease,transform .18s ease,visibility .18s;
+  z-index:110;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu{
+  opacity:1;visibility:visible;transform:translateY(0);
+}
+nav.main .nav-dropdown-menu a{display:block;padding:11px 14px;border-radius:6px;font-size:14px;font-weight:600;color:var(--ink-soft)}
+nav.main .nav-dropdown-menu a::after{display:none}
+nav.main .nav-dropdown-menu a:hover{background:var(--paper-2);color:var(--maroon)}
+
 /* ══ HERO — light banner ══ */
 .hero{position:relative;overflow:hidden;display:flex;flex-direction:column;
   min-height:calc(100vh - var(--header));
