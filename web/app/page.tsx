@@ -195,8 +195,8 @@ export default function Home() {
               <h2>Loan against mutual funds — your questions answered</h2>
             </div>
           </div>
+          <span id="contact"></span>
           <div className="faq-grid">
-            <span id="contact"></span>
             <aside className="faq-aside" id="calculators">
               <h3>Not sure how much you will get?</h3>
               <p>Use our calculator to check the loan amount, or call us and we will explain it in your language.</p>
