@@ -143,20 +143,54 @@ The code side of Phase 2 is done: the eligibility form now calls a real database
 
 ## Step 8 — Add the same keys to Vercel (for the live site)
 
-Once your site is deployed on Vercel (Steps 2-3 above), the live site needs these same two values:
+Once your site is deployed on Vercel (Steps 2-3 above), the live site needs these values too — see the full list of three in Phase 3 below (Step 10 covers this properly). Skip ahead if you're doing Vercel setup for the first time.
 
-1. Go to your project on `https://vercel.com/dashboard`.
-2. **Settings** → **Environment Variables**.
-3. Add both:
-   - `NEXT_PUBLIC_SUPABASE_URL` = same value as your `.env.local`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = same value as your `.env.local`
-4. After adding them, go to the **Deployments** tab, click the **⋯** menu on the most recent deployment, and click **Redeploy** — environment variable changes only take effect on a new deployment.
-5. **Test it:** visit your live `*.vercel.app` URL and repeat the same test from Step 7.4.
+---
+
+# Phase 3 — Mobile number + MPIN login
+
+Instead of the originally-planned email-OTP demo login, you asked for something closer to how most Indian fintech apps work: enter your mobile number, verify it, then either create a 6-digit MPIN (new number) or enter your existing one (returning number) to finish logging in.
+
+**Why this needed a different design than plain Supabase Auth:** Supabase's built-in phone login requires a real SMS provider to even be turned on — there's no free "test number" mode on hosted projects. So real Supabase Auth sessions are still used underneath (a stable internal email tied to your phone number is used to create the account — you never see it, it's not your real email), but the mobile+MPIN experience itself is custom-built. The OTP step is currently a placeholder: **any mobile number accepts the fixed code `000000`** — no real SMS is sent yet. Swapping in real SMS later (once you do DLT registration) only touches one small file, not this whole flow.
+
+The MPIN itself is stored as a bcrypt hash in a table that's completely locked down — not even the logged-in user's own session can read it back, only the server-side signup/login code can.
+
+## Step 9 — Run the second database migration
+
+1. Supabase dashboard → **SQL Editor** → **New query**.
+2. Open `C:\Claude projects\supabase\migrations\0002_mobile_mpin_auth.sql`, copy it all, paste, click **Run**.
+3. Confirm: **Table Editor** should now show a new `user_pins` table, and `profiles` should have a `phone_verified` column.
+
+## Step 10 — Get your service_role key and set all three env vars
+
+This flow needs one more key beyond the two from Phase 2 — the **service_role / secret key**. This key bypasses every security rule in the database, so treat it like a master password: never share it outside this project, never put it in a `NEXT_PUBLIC_*` variable, never commit it.
+
+1. Supabase dashboard → **Settings** → **API Keys** → **Legacy anon, service_role API keys** tab.
+2. Next to `service_role` / `secret`, click **Reveal**, then copy it.
+3. **Locally:** open `web\.env.local` and add a third line:
+   ```
+   SUPABASE_SERVICE_ROLE_KEY=eyJ...your real service_role key...
+   ```
+4. Restart your dev server (Ctrl+C, then `npm run dev`) so it picks up the new value.
+5. **On Vercel** (for the live site): project → **Settings** → **Environment Variables**, and add all three (if you haven't already added the first two):
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY` — add this one normally too; Vercel does **not** expose non-`NEXT_PUBLIC_` variables to the browser, so it stays server-only automatically.
+6. Redeploy (Deployments tab → **⋯** → **Redeploy**) so the new variables take effect.
+
+## Step 11 — Test it
+
+1. Open `http://localhost:3000/login` (or your live URL once deployed).
+2. Enter any valid mobile number (10 digits, starting 6-9) → **Send OTP**.
+3. Enter `000000` as the code → **Verify**.
+4. First time with that number: you'll be asked to create a 6-digit MPIN. Enter and confirm it.
+5. You should land on `/account` showing your phone number, and the header should now say **My account** instead of **Login / Sign up**.
+6. Click **Log out**, then log in again with the same number → same demo code `000000` → this time you'll be asked to **enter** your MPIN instead of creating one. Enter it correctly and you're back in.
 
 ---
 
 ## What's next
 
-Phase 3 will add demo login (email-based OTP, using Supabase's built-in email code flow — no SMS cost, no DLT registration needed yet). Before that starts you'll need a free-tier account with a transactional email provider like Resend, since Supabase's own default mailer only allows 2 emails/hour, which you'd exhaust almost immediately while testing. I'll walk you through that signup and the Supabase Auth settings it plugs into when we get there.
+Two things are still open: getting the live Vercel deployment actually working (the project needed to be deleted and re-imported after an earlier misconfiguration — pick that back up if you haven't finished it), and then wiring up the remaining dead-link forms ("Become a partner", grievance/contact). Real SMS delivery for the OTP step and the admin panel for viewing submitted leads are both still deferred, not forgotten.
 
 This file will be updated in place as each phase lands — re-open it any time rather than hunting for scattered instructions.
