@@ -200,7 +200,7 @@ export default function Home() {
             <aside className="faq-aside" id="calculators">
               <h3>Not sure how much you will get?</h3>
               <p>Use our calculator to check the loan amount, or call us and we will explain it in your language.</p>
-              <a className="btn btn-dark" href="#">Open the loan calculator</a>
+              <a className="btn btn-dark" href="/calculators">Open the loan calculator</a>
               <a className="btn btn-outline" href="#">Talk to our team</a>
               <p style={{ margin: "18px 0 0", fontSize: "12.5px" }}>
                 Monday to Saturday, 9:30 am to 6:30 pm ·{" "}

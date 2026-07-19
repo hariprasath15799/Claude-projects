@@ -193,6 +193,37 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 .faq-aside p{font-size:14px;color:var(--muted);margin:10px 0 20px}
 .faq-aside .btn{width:100%;margin-bottom:10px}
 
+/* ── calculator ── */
+.calc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,56px);align-items:start}
+.calc-field{margin-bottom:26px}
+.calc-field label{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:14px;color:var(--ink-soft);margin-bottom:10px}
+.calc-field label b{font-family:var(--display);font-size:17px;color:var(--ink);font-variant-numeric:tabular-nums}
+.calc-field input[type="range"]{width:100%;accent-color:var(--yellow)}
+.calc-minmax{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:6px}
+
+.calc-tabs{display:flex;gap:8px;margin-bottom:22px}
+.calc-tab{flex:1;padding:11px;border-radius:var(--radius);border:1.5px solid var(--ink);background:#fff;font-weight:700;font-size:14px;color:var(--ink);text-align:center;transition:background .18s,color .18s}
+.calc-tab.active{background:var(--ink);color:#fff}
+
+.calc-result{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:22px}
+.calc-result-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line)}
+.calc-result-row:last-child{border-bottom:0}
+.calc-result-row span{font-size:13.5px;color:var(--muted);font-weight:600}
+.calc-result-row b{font-family:var(--display);font-size:20px;color:var(--ink);font-variant-numeric:tabular-nums}
+.calc-result-row.highlight{background:#FFFBF0;border:1.5px solid rgba(255,199,24,.6);border-radius:10px;padding:16px 18px;margin-bottom:6px}
+.calc-result-row.highlight b{color:var(--maroon);font-size:24px}
+
+.calc-bar{display:flex;height:12px;border-radius:6px;overflow:hidden;margin:16px 0 8px;background:var(--line)}
+.calc-bar-principal{background:var(--ink)}
+.calc-bar-interest{background:var(--yellow)}
+.calc-bar-legend{display:flex;gap:18px;font-size:12px;color:var(--muted)}
+.calc-bar-legend span{display:flex;align-items:center;gap:6px}
+.calc-bar-legend i{width:10px;height:10px;border-radius:3px;display:inline-block;font-style:normal}
+
+@media (max-width:1023px){
+  .calc-grid{grid-template-columns:1fr}
+}
+
 /* ── partner band ── */
 .band{background:var(--yellow);padding:clamp(44px,4vw,64px) 0}
 .band .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}

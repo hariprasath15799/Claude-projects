@@ -70,7 +70,7 @@ export default function Footer() {
               <li><a href="#">Contact us</a></li>
               <li><a href="#">Site map</a></li>
               <li><a href="#">Redressal of customer complaints</a></li>
-              <li><a href="#calculators">Calculators</a></li>
+              <li><a href="/calculators">Calculators</a></li>
             </ul>
           </div>
         </div>

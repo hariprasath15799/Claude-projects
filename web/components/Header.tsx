@@ -20,7 +20,7 @@ export default async function Header() {
               <a href="#products">Loan against shares</a>
             </div>
           </div>
-          <a href="#calculators">Calculators</a>
+          <a href="/calculators">Calculators</a>
           <a href="#faq">Discover Shriram</a>
           <a href="#investors">Investors</a>
           <a href="#partner">Become a partner</a>
