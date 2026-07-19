@@ -9,7 +9,7 @@ export default async function Header() {
   return (
     <header>
       <div className="wrap nav">
-        <a className="logo" href="#" aria-label="Shriram Credit home">
+        <a className="logo" href="/" aria-label="Shriram Credit home">
           <img src="/logo.jpg" alt="Shriram Credit" />
         </a>
         <nav className="main" aria-label="Primary">

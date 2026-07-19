@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="f-top">
           <div>
-            <a className="f-brand" href="#" aria-label="Shriram Credit home">
+            <a className="f-brand" href="/" aria-label="Shriram Credit home">
               <img src="/logo.jpg" alt="Shriram Credit" />
             </a>
             <div className="addr">
