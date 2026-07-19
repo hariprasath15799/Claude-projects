@@ -15,7 +15,7 @@ export default async function Header() {
         <nav className="main" aria-label="Primary">
           <a href="#products">Loans</a>
           <a href="#calculators">Calculators</a>
-          <a href="#faq">Support</a>
+          <a href="#faq">Discover Shriram</a>
           <a href="#investors">Investors</a>
           <a href="#partner">Become a partner</a>
         </nav>
