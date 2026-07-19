@@ -63,11 +63,10 @@ export default function Footer() {
           <div>
             <h4>Others</h4>
             <ul>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Careers</a></li>
+              <li><a href="#about">About us</a></li>
               <li><a href="#">Learning Lounge — blogs</a></li>
-              <li><a href="#">Investors</a></li>
-              <li><a href="#">Contact us</a></li>
+              <li><a href="/investors">Investors</a></li>
+              <li><a href="#contact">Contact us</a></li>
               <li><a href="#">Site map</a></li>
               <li><a href="#">Redressal of customer complaints</a></li>
               <li><a href="/calculators">Calculators</a></li>

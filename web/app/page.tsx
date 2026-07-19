@@ -125,7 +125,6 @@ export default function Home() {
 
       {/* ══ ABOUT SHRIRAM GROUP ══ */}
       <section className="about" id="about">
-        <span id="investors"></span>
         <div className="wrap">
           <div className="about-grid">
             <div className="about-copy">
@@ -197,6 +196,7 @@ export default function Home() {
             </div>
           </div>
           <div className="faq-grid">
+            <span id="contact"></span>
             <aside className="faq-aside" id="calculators">
               <h3>Not sure how much you will get?</h3>
               <p>Use our calculator to check the loan amount, or call us and we will explain it in your language.</p>
