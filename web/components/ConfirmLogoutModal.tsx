@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export default function ConfirmLogoutModal({
   onConfirm,
@@ -9,7 +10,10 @@ export default function ConfirmLogoutModal({
   onConfirm: () => void;
   onCancel: () => void;
 }) {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     document.body.style.overflow = "hidden";
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") onCancel();
@@ -21,7 +25,9 @@ export default function ConfirmLogoutModal({
     };
   }, [onCancel]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <div className="confirm-modal-overlay" onClick={onCancel}>
       <div
         className="confirm-modal"
@@ -30,17 +36,17 @@ export default function ConfirmLogoutModal({
         aria-label="Confirm log out"
         onClick={(e) => e.stopPropagation()}
       >
-        <h3>Log out?</h3>
-        <p>You&apos;ll need your mobile number and MPIN to log back in.</p>
+        <h3>Do you really want to logout?</h3>
         <div className="confirm-modal-actions">
-          <button type="button" className="btn btn-outline" onClick={onCancel}>
+          <button type="button" className="btn btn-yellow" onClick={onCancel}>
             Cancel
           </button>
-          <button type="button" className="btn btn-dark" onClick={onConfirm}>
-            Log out
+          <button type="button" className="btn btn-outline" onClick={onConfirm}>
+            Yes
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
