@@ -277,9 +277,11 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 
 /* ── about us ── */
 .about-hero{background:linear-gradient(180deg,#FFF6DC 0%,#fff 55%);padding-block:clamp(48px,7vh,84px)}
-.about-hero .wrap{max-width:780px}
-.about-hero h1{font-size:clamp(30px,3.6vw,48px);font-family:var(--display);font-weight:800;letter-spacing:-.026em;line-height:1.16;margin-top:14px}
-.about-hero .tagline{margin-top:18px;max-width:44em}
+.about-hero h1{font-size:clamp(30px,3.6vw,48px);font-family:var(--display);font-weight:800;letter-spacing:-.026em;line-height:1.16;margin-top:14px;max-width:none}
+.about-hero .tagline{margin-top:18px;max-width:none;font-size:clamp(15px,1.1vw,17.5px)}
+
+.about-full .about-copy{max-width:none}
+.about-full .about-copy p{max-width:none}
 
 .vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .vm-grid .card{box-shadow:none}

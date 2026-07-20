@@ -80,7 +80,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* ══ ABOUT SCCL ══ */}
-      <section className="about">
+      <section className="about about-full">
         <div className="wrap">
           <div className="about-copy">
             <p className="eyebrow">About Shriram Credit Company Limited</p>
