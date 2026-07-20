@@ -19,16 +19,17 @@ export default async function AccountPage() {
     .maybeSingle();
 
   return (
-    <section style={{ display: "flex", justifyContent: "center", padding: "clamp(64px,7vw,104px) 20px" }}>
-      <div className="card" style={{ width: "100%", maxWidth: 440 }}>
-        <div className="card-head">
-          <h2>Your account</h2>
-          <p>You&apos;re logged in with a real Supabase session.</p>
-        </div>
-        <div className="badge" style={{ marginBottom: 18 }}>
+    <section style={{ background: "#fff", display: "flex", justifyContent: "center", padding: "clamp(64px,7vw,104px) 20px" }}>
+      <div style={{ width: "100%", maxWidth: 440 }}>
+        <p className="eyebrow">Your account</p>
+        <h1 style={{ marginTop: 12 }}>Welcome back</h1>
+        <p className="tagline" style={{ marginTop: 10 }}>You&apos;re logged in with a real Supabase session.</p>
+        <div className="badge" style={{ display: "inline-flex", marginTop: 26, marginBottom: 22 }}>
           +91 {profile?.phone ?? "—"}
         </div>
-        <LogoutButton />
+        <div>
+          <LogoutButton />
+        </div>
       </div>
     </section>
   );

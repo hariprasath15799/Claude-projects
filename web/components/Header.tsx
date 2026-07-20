@@ -1,4 +1,5 @@
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import AccountMenu from "@/components/AccountMenu";
 
 export default async function Header() {
   const supabase = await createServerSupabaseClient();
@@ -34,7 +35,7 @@ export default async function Header() {
         </nav>
         <div className="nav-right">
           {user ? (
-            <a className="btn btn-yellow" href="/account">My account</a>
+            <AccountMenu />
           ) : (
             <a className="btn btn-yellow" href="/login">Login / Sign up</a>
           )}
