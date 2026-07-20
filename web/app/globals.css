@@ -241,25 +241,41 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 .band h2{font-size:clamp(24px,2.4vw,36px);max-width:18em}
 .band p{margin-top:8px;font-size:15px;color:var(--ink-soft)}
 
-/* ── partner promo (Shriram Fortune Partners app) ── */
-.partner-promo{
-  min-height:calc(100vh - var(--header));
-  display:flex;flex-direction:column;
-  background:linear-gradient(180deg,#FFCB2E 0%,#FFDE7A 28%,#FFF6DC 46%,#fff 62%,#fff 100%);
-  overflow:hidden;
+/* ── app promo (Shriram Fortune Partners) ── */
+.app-hero{background:linear-gradient(180deg,#FFF6DC 0%,#fff 60%);padding-block:clamp(48px,7vh,88px)}
+.app-hero-row{display:flex;align-items:center;gap:clamp(36px,5vw,80px)}
+.app-hero-copy{flex:1;min-width:0}
+.app-hero-copy h1{font-size:clamp(30px,3.6vw,48px);font-family:var(--display);font-weight:800;letter-spacing:-.026em;line-height:1.16;margin-top:14px;max-width:14em}
+.app-hero-copy .tagline{margin-top:18px}
+.app-hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.app-hero-art{flex:0 0 clamp(240px,28vw,360px);width:clamp(240px,28vw,360px)}
+
+.app-stats-band{background:var(--ink);padding:clamp(40px,4.5vw,60px) 0}
+.app-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.app-stat{border-left:2px solid #2A2D33;padding-left:clamp(16px,1.6vw,24px)}
+.app-stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,40px);color:var(--yellow);letter-spacing:-.03em;line-height:1}
+.app-stat span{display:block;margin-top:10px;font-size:14px;color:#fff;font-weight:600;line-height:1.5}
+
+.app-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.app-feature-card{background:#fff;border:1.5px solid var(--ink);border-radius:14px;padding:28px 26px;transition:background .2s}
+.app-feature-card:hover{background:var(--yellow)}
+.app-feature-card svg{width:28px;height:28px;stroke:var(--maroon);fill:none;stroke-width:1.6;margin-bottom:18px}
+.app-feature-card:hover svg{stroke:var(--ink)}
+.app-feature-card h3{font-size:18px}
+.app-feature-card p{margin-top:8px;font-size:13.5px;color:var(--muted);line-height:1.55}
+.app-feature-card:hover p{color:var(--ink-soft)}
+
+@media (max-width:1023px){
+  .app-hero-row{flex-direction:column-reverse;text-align:center}
+  .app-hero-art{width:100%;max-width:300px}
+  .app-hero-actions{justify-content:center}
+  .app-hero-copy h1{max-width:none}
+  .app-feature-grid{grid-template-columns:1fr 1fr}
 }
-.partner-promo .wrap{max-width:460px;width:100%;display:flex;flex-direction:column;flex:1;padding-top:clamp(28px,5vh,56px)}
-.partner-slide-wrap{overflow:hidden;flex:1}
-.partner-slides{display:flex;transition:transform .45s cubic-bezier(.65,0,.35,1);height:100%}
-.partner-slide{flex:0 0 100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding-inline:8px}
-.partner-slide h1{font-size:clamp(24px,3.6vw,32px);font-weight:800;color:var(--ink);line-height:1.28;max-width:15em}
-.partner-illustration{width:100%;max-width:360px;margin:clamp(20px,4vh,40px) auto clamp(16px,3vh,28px)}
-.partner-copy{font-size:15.5px;color:var(--ink-soft);line-height:1.55;max-width:26em;margin-inline:auto}
-.partner-dots{display:flex;justify-content:center;gap:8px;margin:clamp(20px,4vh,36px) 0}
-.partner-dot{width:22px;height:8px;border-radius:5px;border:1.5px solid rgba(11,12,14,.25);background:transparent;padding:0;transition:background .25s,border-color .25s,width .25s}
-.partner-dot[aria-selected="true"]{width:32px;background:var(--yellow-deep);border-color:var(--yellow-deep)}
-.partner-cta-wrap{padding:0 0 clamp(24px,5vh,44px)}
-.partner-cta{width:100%;height:58px;font-size:16.5px}
+@media (max-width:640px){
+  .app-stats-grid{grid-template-columns:1fr;gap:26px}
+  .app-feature-grid{grid-template-columns:1fr}
+}
 
 /* ── footer ── */
 footer{background:var(--ink);color:#9C978F;padding-top:72px;font-size:14px}

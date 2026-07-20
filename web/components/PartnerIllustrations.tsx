@@ -54,11 +54,7 @@ function Plant({ x, y }: { x: number; y: number }) {
   );
 }
 
-function PersonBase({
-  armPose,
-}: {
-  armPose: "wave" | "point" | "relax";
-}) {
+function Person() {
   return (
     <g>
       {/* legs */}
@@ -70,28 +66,10 @@ function PersonBase({
       <path d="M148 96c6-10 16-16 26-16s20 6 26 16l8 56c1 6-3 10-9 10h-50c-6 0-10-4-9-10z" fill={YELLOW} stroke={INK} strokeWidth="2" />
       {/* inner shirt */}
       <path d="M166 88c4 10 20 10 24 0l-4 44h-16z" fill="#fff" stroke={INK} strokeWidth="1.5" />
-
-      {armPose === "wave" && (
-        <>
-          <path d="M148 104c-14 2-24 12-26 24" stroke={SKIN} strokeWidth="12" strokeLinecap="round" fill="none" />
-          <circle cx="120" cy="126" r="8" fill={SKIN} stroke={INK} strokeWidth="1.5" />
-          <path d="M208 104c12 4 18 16 16 28" stroke={YELLOW_DEEP} strokeWidth="12" strokeLinecap="round" fill="none" />
-        </>
-      )}
-      {armPose === "point" && (
-        <>
-          <path d="M150 104c-16 6-26 20-24 34" stroke={YELLOW_DEEP} strokeWidth="12" strokeLinecap="round" fill="none" />
-          <path d="M206 104c14-2 28 4 34 14" stroke={SKIN} strokeWidth="12" strokeLinecap="round" fill="none" />
-          <circle cx="242" cy="120" r="8" fill={SKIN} stroke={INK} strokeWidth="1.5" />
-        </>
-      )}
-      {armPose === "relax" && (
-        <>
-          <path d="M150 100c-10-10-8-22 2-26" stroke={SKIN} strokeWidth="12" strokeLinecap="round" fill="none" />
-          <path d="M206 100c10-10 8-22-2-26" stroke={SKIN} strokeWidth="12" strokeLinecap="round" fill="none" />
-        </>
-      )}
-
+      {/* arms */}
+      <path d="M148 104c-14 2-24 12-26 24" stroke={SKIN} strokeWidth="12" strokeLinecap="round" fill="none" />
+      <circle cx="120" cy="126" r="8" fill={SKIN} stroke={INK} strokeWidth="1.5" />
+      <path d="M208 104c12 4 18 16 16 28" stroke={YELLOW_DEEP} strokeWidth="12" strokeLinecap="round" fill="none" />
       {/* neck + head */}
       <rect x="170" y="70" width="16" height="14" rx="4" fill={SKIN} />
       <circle cx="178" cy="58" r="20" fill={SKIN} stroke={INK} strokeWidth="2" />
@@ -100,7 +78,7 @@ function PersonBase({
   );
 }
 
-export function IllustrationHourglass() {
+export function AppHeroIllustration() {
   return (
     <svg viewBox="0 0 360 240" fill="none" xmlns="http://www.w3.org/2000/svg">
       <Sparkles />
@@ -118,77 +96,7 @@ export function IllustrationHourglass() {
         <path d="M-6 18c2 8-2 12-2 18" stroke={YELLOW} strokeWidth="4" strokeLinecap="round" />
       </g>
 
-      <PersonBase armPose="wave" />
-    </svg>
-  );
-}
-
-export function IllustrationTablet() {
-  return (
-    <svg viewBox="0 0 360 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <Sparkles />
-      <Ground />
-      <Coins x={272} y={214} />
-      <MoneyBag x={230} y={200} />
-      <Plant x={318} y={218} />
-
-      {/* clock */}
-      <g transform="translate(300 90)">
-        <circle r="22" fill="#fff" stroke={INK} strokeWidth="2" />
-        <path d="M0 0V-13M0 0l9 6" stroke={INK} strokeWidth="2.5" strokeLinecap="round" />
-      </g>
-
-      {/* tablet */}
-      <g transform="translate(258 150)">
-        <rect x="-58" y="-90" width="116" height="150" rx="14" fill="#fff" stroke={INK} strokeWidth="2.5" />
-        <circle cx="0" cy="-76" r="3" fill={INK} />
-        <rect x="-40" y="-52" width="80" height="16" rx="8" fill="#F6F4EF" stroke={INK} strokeWidth="1.5" />
-        <circle cx="-30" cy="-44" r="5" fill={YELLOW} />
-        <rect x="-40" y="-22" width="80" height="16" rx="8" fill="#F6F4EF" stroke={INK} strokeWidth="1.5" />
-        <circle cx="-30" cy="-14" r="5" fill={YELLOW} />
-        <rect x="-40" y="14" width="80" height="18" rx="9" fill={YELLOW} stroke={INK} strokeWidth="1.5" />
-      </g>
-
-      <PersonBase armPose="point" />
-    </svg>
-  );
-}
-
-export function IllustrationArmchair() {
-  return (
-    <svg viewBox="0 0 360 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <Sparkles />
-      <Ground />
-      <Coins x={286} y={214} />
-      <MoneyBag x={324} y={198} />
-
-      {/* phone */}
-      <g transform="translate(258 130)">
-        <rect x="-48" y="-90" width="96" height="150" rx="16" fill="#fff" stroke={INK} strokeWidth="2.5" />
-        <circle cx="0" cy="-58" r="20" fill={YELLOW} />
-        <path d="M-9-58l6 7 12-14" stroke={INK} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <rect x="-32" y="-16" width="64" height="14" rx="7" fill="#F6F4EF" stroke={INK} strokeWidth="1.5" />
-      </g>
-
-      {/* armchair */}
-      <g transform="translate(150 150)">
-        <path d="M-58 40V0c0-22 18-38 40-38h20c22 0 40 16 40 38v40z" fill="#fff" stroke={INK} strokeWidth="2.5" />
-        <rect x="-66" y="20" width="16" height="34" rx="6" fill="#fff" stroke={INK} strokeWidth="2" />
-        <rect x="50" y="20" width="16" height="34" rx="6" fill="#fff" stroke={INK} strokeWidth="2" />
-        <rect x="-58" y="40" width="116" height="16" rx="6" fill="#F6F4EF" stroke={INK} strokeWidth="2" />
-      </g>
-
-      {/* seated person (simplified, relaxed) */}
-      <g transform="translate(178 96)">
-        <path d="M-14 54l-4 34h14l2-24 2 24h14l-4-34z" fill={INK} />
-        <path d="M-32 100h20l2 6c1 3-1 5-4 5h-16c-3 0-4-3-2-5z" fill="#fff" stroke={INK} strokeWidth="2" transform="translate(20 -18)" />
-        <path d="M-8 20c4-8 12-13 20-13s16 5 20 13l4 38c1 5-3 9-8 9h-32c-5 0-9-4-8-9z" fill={YELLOW} stroke={INK} strokeWidth="2" />
-        <path d="M28 10c8-8 6-18-2-22" stroke={SKIN} strokeWidth="11" strokeLinecap="round" fill="none" />
-        <path d="M-6 10c-8-8-6-18 2-22" stroke={SKIN} strokeWidth="11" strokeLinecap="round" fill="none" />
-        <rect x="4" y="-8" width="14" height="12" rx="4" fill={SKIN} />
-        <circle cx="11" cy="-20" r="18" fill={SKIN} stroke={INK} strokeWidth="2" />
-        <path d="M-7-24c-2-14 10-24 22-22 12 2 18 11 16 20-5-7-14-3-20-9-4 7-12 7-18 11z" fill={INK} />
-      </g>
+      <Person />
     </svg>
   );
 }
