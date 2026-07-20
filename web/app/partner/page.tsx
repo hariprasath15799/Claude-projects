@@ -1,9 +1,16 @@
+import QRCode from "qrcode";
 import { AppHeroIllustration } from "@/components/PartnerIllustrations";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.sfs.partnersone&pcampaignid=web_share";
 
-export default function PartnerPage() {
+export default async function PartnerPage() {
+  const qrDataUrl = await QRCode.toDataURL(PLAY_STORE_URL, {
+    width: 240,
+    margin: 1,
+    color: { dark: "#0B0C0E", light: "#FFFFFF" },
+  });
+
   return (
     <>
       {/* ══ HERO ══ */}
@@ -20,29 +27,20 @@ export default function PartnerPage() {
               <a className="btn btn-yellow" href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
                 Get it on Google Play
               </a>
-              <a className="btn btn-outline" href="#app-features">See what you get</a>
+              <a
+                className="app-qr-link"
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Scan the QR code to download Shriram Fortune Partners"
+              >
+                <img src={qrDataUrl} alt="QR code to download the Shriram Fortune Partners app" width={72} height={72} />
+                <span>Scan to download</span>
+              </a>
             </div>
           </div>
           <div className="app-hero-art">
             <AppHeroIllustration />
-          </div>
-        </div>
-      </section>
-
-      {/* ══ STATS ══ */}
-      <section className="app-stats-band">
-        <div className="wrap app-stats-grid">
-          <div className="app-stat">
-            <b>1 Lakh+</b>
-            <span>Agents already earning with us — join the movement</span>
-          </div>
-          <div className="app-stat">
-            <b>₹1 Lakh</b>
-            <span>Potential monthly earning, unlocked as you grow</span>
-          </div>
-          <div className="app-stat">
-            <b>All-in-one</b>
-            <span>Investments and insurance from a single dashboard</span>
           </div>
         </div>
       </section>

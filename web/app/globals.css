@@ -247,14 +247,13 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 .app-hero-copy{flex:1;min-width:0}
 .app-hero-copy h1{font-size:clamp(30px,3.6vw,48px);font-family:var(--display);font-weight:800;letter-spacing:-.026em;line-height:1.16;margin-top:14px;max-width:14em}
 .app-hero-copy .tagline{margin-top:18px}
-.app-hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.app-hero-actions{display:flex;align-items:center;gap:20px;margin-top:30px;flex-wrap:wrap}
 .app-hero-art{flex:0 0 clamp(240px,28vw,360px);width:clamp(240px,28vw,360px)}
 
-.app-stats-band{background:var(--ink);padding:clamp(40px,4.5vw,60px) 0}
-.app-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
-.app-stat{border-left:2px solid #2A2D33;padding-left:clamp(16px,1.6vw,24px)}
-.app-stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,40px);color:var(--yellow);letter-spacing:-.03em;line-height:1}
-.app-stat span{display:block;margin-top:10px;font-size:14px;color:#fff;font-weight:600;line-height:1.5}
+.app-qr-link{display:inline-flex;flex-direction:column;align-items:center;gap:6px}
+.app-qr-link img{width:72px;height:72px;border-radius:10px;border:1.5px solid var(--ink);padding:6px;background:#fff;transition:transform .2s ease,box-shadow .2s ease;position:relative}
+.app-qr-link:hover img,.app-qr-link:focus-visible img,.app-qr-link:active img{transform:scale(1.7);box-shadow:0 14px 30px rgba(11,12,14,.18);z-index:5}
+.app-qr-link span{font-size:11px;color:var(--muted);font-weight:600}
 
 .app-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .app-feature-card{background:#fff;border:1.5px solid var(--ink);border-radius:14px;padding:28px 26px;transition:background .2s}
@@ -273,7 +272,6 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
   .app-feature-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
-  .app-stats-grid{grid-template-columns:1fr;gap:26px}
   .app-feature-grid{grid-template-columns:1fr}
 }
 
