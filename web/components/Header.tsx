@@ -27,7 +27,7 @@ export default async function Header() {
             <div className="nav-dropdown-menu">
               <a href="/about-us">About us</a>
               <a href="/contact">Contact us</a>
-              <a href="#">Blogs</a>
+              <a href="/blogs">Blogs</a>
             </div>
           </div>
           <a href="/investors">Investors</a>

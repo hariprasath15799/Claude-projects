@@ -18,9 +18,10 @@ export default function AccountMenu() {
   }, []);
 
   async function handleLogout() {
+    if (!window.confirm("Are you sure you want to log out?")) return;
+    setOpen(false);
     const supabase = createBrowserSupabaseClient();
     await supabase.auth.signOut();
-    setOpen(false);
     router.push("/login");
     router.refresh();
   }

@@ -23,8 +23,7 @@ export default async function AccountPage() {
       <div style={{ width: "100%", maxWidth: 440 }}>
         <p className="eyebrow">Your account</p>
         <h1 style={{ marginTop: 12 }}>Welcome back</h1>
-        <p className="tagline" style={{ marginTop: 10 }}>You&apos;re logged in with a real Supabase session.</p>
-        <div className="badge" style={{ display: "inline-flex", marginTop: 26, marginBottom: 22 }}>
+        <div className="badge" style={{ display: "inline-flex", marginTop: 22, marginBottom: 22 }}>
           +91 {profile?.phone ?? "—"}
         </div>
         <div>
