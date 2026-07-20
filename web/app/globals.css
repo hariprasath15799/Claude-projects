@@ -275,6 +275,32 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
   .app-feature-grid{grid-template-columns:1fr}
 }
 
+/* ── about us ── */
+.about-hero{background:linear-gradient(180deg,#FFF6DC 0%,#fff 55%);padding-block:clamp(48px,7vh,84px)}
+.about-hero .wrap{max-width:780px}
+.about-hero h1{font-size:clamp(30px,3.6vw,48px);font-family:var(--display);font-weight:800;letter-spacing:-.026em;line-height:1.16;margin-top:14px}
+.about-hero .tagline{margin-top:18px;max-width:44em}
+
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.vm-grid .card{box-shadow:none}
+.vm-grid .card h3{font-size:19px}
+.vm-grid .card p{margin-top:10px;font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+
+.board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.board-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 24px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.board-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(11,12,14,.08);border-color:rgba(255,199,24,.6)}
+.board-card h3{font-size:17px}
+.board-card .role{display:block;margin-top:4px;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--maroon)}
+.board-card p{margin-top:12px;font-size:13.5px;color:var(--muted);line-height:1.6}
+
+@media (max-width:1023px){
+  .vm-grid{grid-template-columns:1fr}
+  .board-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .board-grid{grid-template-columns:1fr}
+}
+
 /* ── footer ── */
 footer{background:var(--ink);color:#9C978F;padding-top:72px;font-size:14px}
 .f-top{display:grid;grid-template-columns:1.35fr 1fr 1fr .85fr .95fr;gap:clamp(24px,3vw,48px);padding-bottom:56px;border-bottom:1px solid var(--line-dark)}
