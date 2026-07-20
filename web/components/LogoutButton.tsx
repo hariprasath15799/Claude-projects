@@ -1,13 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import ConfirmLogoutModal from "./ConfirmLogoutModal";
 
 export default function LogoutButton() {
   const router = useRouter();
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
-  async function handleLogout() {
-    if (!window.confirm("Are you sure you want to log out?")) return;
+  async function performLogout() {
     const supabase = createBrowserSupabaseClient();
     await supabase.auth.signOut();
     router.push("/login");
@@ -15,8 +17,13 @@ export default function LogoutButton() {
   }
 
   return (
-    <button className="btn btn-dark" onClick={handleLogout}>
-      Log out
-    </button>
+    <>
+      <button className="btn btn-dark" onClick={() => setConfirmOpen(true)}>
+        Log out
+      </button>
+      {confirmOpen && (
+        <ConfirmLogoutModal onConfirm={performLogout} onCancel={() => setConfirmOpen(false)} />
+      )}
+    </>
   );
 }

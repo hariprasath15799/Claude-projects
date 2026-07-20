@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import ConfirmLogoutModal from "./ConfirmLogoutModal";
 
 export default function AccountMenu() {
   const [open, setOpen] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -17,9 +19,8 @@ export default function AccountMenu() {
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
-  async function handleLogout() {
-    if (!window.confirm("Are you sure you want to log out?")) return;
-    setOpen(false);
+  async function performLogout() {
+    setConfirmOpen(false);
     const supabase = createBrowserSupabaseClient();
     await supabase.auth.signOut();
     router.push("/login");
@@ -47,10 +48,21 @@ export default function AccountMenu() {
           <a href="/account" role="menuitem" onClick={() => setOpen(false)}>
             Profile
           </a>
-          <button type="button" role="menuitem" onClick={handleLogout}>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={() => {
+              setOpen(false);
+              setConfirmOpen(true);
+            }}
+          >
             Log out
           </button>
         </div>
+      )}
+
+      {confirmOpen && (
+        <ConfirmLogoutModal onConfirm={performLogout} onCancel={() => setConfirmOpen(false)} />
       )}
     </div>
   );
