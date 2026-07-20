@@ -21,19 +21,6 @@ function Tick() {
   );
 }
 
-function LamfPersonIllustration() {
-  return (
-    <svg viewBox="0 0 320 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="180" cy="150" r="140" fill="#FFF6DC" />
-      <path d="M60 300c0-70 50-116 120-116s120 46 120 116z" fill="#0B0C0E" />
-      <circle cx="180" cy="118" r="52" fill="#F4C89A" stroke="#0B0C0E" strokeWidth="2" />
-      <path d="M130 108c-4-34 24-56 50-56 28 0 52 20 50 50-12-16-34-8-46-20-8 16-32 14-54 26z" fill="#0B0C0E" />
-      <path d="M120 220l60-14 60 14v26c0 8-6 14-14 14H134c-8 0-14-6-14-14z" fill="#E3E0D9" stroke="#0B0C0E" strokeWidth="2" />
-      <rect x="128" y="196" width="104" height="30" rx="4" fill="#fff" stroke="#0B0C0E" strokeWidth="2" />
-    </svg>
-  );
-}
-
 function LamfPromo() {
   return (
     <div className="login-promo">
@@ -58,15 +45,6 @@ function LamfPromo() {
             <li><Tick /><span>Interest only repayment and EMI options available</span></li>
             <li><Tick /><span>RBI regulated NBFC with 25+ years of legacy</span></li>
           </ul>
-        </div>
-      </div>
-
-      <div className="login-promo-art">
-        <LamfPersonIllustration />
-        <div className="login-promo-badge">
-          <span className="login-promo-badge-label">Congratulations</span>
-          <span className="login-promo-badge-sub">Your loan has been sanctioned</span>
-          <span className="login-promo-badge-amount">₹50,000</span>
         </div>
       </div>
     </div>
