@@ -316,25 +316,26 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 
 /* ── login ── */
 .login-split{display:flex;min-height:calc(100vh - var(--header))}
-.login-promo{flex:1 1 46%;background:linear-gradient(160deg,#FFDE7A 0%,var(--yellow) 55%,var(--yellow-deep) 100%);padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
-.login-phone{width:220px;background:#fff;border:3px solid var(--ink);border-radius:28px;padding:14px 14px 18px;box-shadow:12px 12px 0 rgba(11,12,14,.18)}
-.login-phone-notch{width:56px;height:6px;border-radius:4px;background:var(--ink);margin:0 auto 14px}
-.login-phone-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.login-phone-amount{font-family:var(--display);font-weight:800;font-size:26px;color:var(--ink);margin-top:6px;line-height:1.1}
-.login-phone-bar{height:8px;border-radius:5px;background:var(--paper-2);margin-top:16px;overflow:hidden}
-.login-phone-bar span{display:block;height:100%;width:64%;background:var(--yellow-deep);border-radius:5px}
-.login-phone-cta{margin-top:16px;display:block;text-align:center;background:var(--ink);color:#fff;font-weight:700;font-size:12.5px;padding:10px;border-radius:8px}
+.login-promo{flex:1 1 50%;background:linear-gradient(160deg,#FFF6DC 0%,#FFEFC2 100%);padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:32px;overflow:hidden}
 
-.login-promo-card{background:#fff;border:1.5px solid var(--ink);border-radius:14px;padding:24px 24px 0;max-width:380px;width:100%;box-shadow:8px 8px 0 rgba(11,12,14,.14);overflow:hidden}
-.login-promo-card h3{font-size:19px}
-.login-promo-card ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
-.login-promo-card li{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-soft);font-weight:600}
-.login-promo-card .tick{background:var(--maroon)}
-.login-promo-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.login-promo-strip{background:var(--ink);color:#fff;margin:20px -24px 0;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;font-weight:700}
-.login-promo-strip:hover{background:var(--maroon)}
+.login-promo-copy h2{font-family:var(--display);font-weight:800;font-size:clamp(26px,2.6vw,38px);line-height:1.2;letter-spacing:-.02em}
+.login-promo-copy h2 .hl{color:var(--yellow-deep)}
+.login-promo-sub{margin-top:14px;font-weight:700;font-size:15.5px;color:var(--ink-soft)}
+.login-promo-desc{margin-top:10px;font-size:14px;color:var(--muted);line-height:1.6;max-width:44em}
 
-.login-panel{flex:1 1 54%;display:flex;align-items:center;justify-content:center;padding:clamp(32px,4vw,56px) 24px}
+.login-usp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:24px}
+.login-usp-grid ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.login-usp-grid li{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;color:var(--ink-soft)}
+.login-usp-grid .tick{background:var(--ink);flex-shrink:0}
+
+.login-promo-art{position:relative;display:flex;justify-content:center;margin-top:8px}
+.login-promo-art svg{width:100%;max-width:220px}
+.login-promo-badge{position:absolute;top:2%;left:6%;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 16px 34px rgba(11,12,14,.16);text-align:center}
+.login-promo-badge-label{display:block;font-weight:800;font-size:14px;color:var(--ink)}
+.login-promo-badge-sub{display:block;margin-top:2px;font-size:10.5px;color:var(--muted)}
+.login-promo-badge-amount{display:block;margin-top:6px;font-family:var(--display);font-weight:800;font-size:20px;color:var(--ink)}
+
+.login-panel{flex:1 1 50%;display:flex;align-items:center;justify-content:center;padding:clamp(32px,4vw,56px) 24px}
 .login-form-wrap{width:100%;max-width:420px}
 .login-form-wrap h1{font-size:clamp(24px,2.4vw,30px);line-height:1.3}
 .login-form-wrap h1 em{display:block;font-style:normal;font-weight:800}
