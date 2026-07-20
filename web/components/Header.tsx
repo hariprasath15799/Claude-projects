@@ -1,5 +1,6 @@
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import AccountMenu from "@/components/AccountMenu";
+import HeaderAuthCta from "@/components/HeaderAuthCta";
 
 export default async function Header() {
   const supabase = await createServerSupabaseClient();
@@ -34,11 +35,7 @@ export default async function Header() {
           <a href="/partner">Become a partner</a>
         </nav>
         <div className="nav-right">
-          {user ? (
-            <AccountMenu />
-          ) : (
-            <a className="btn btn-yellow" href="/login">Login / Sign up</a>
-          )}
+          {user ? <AccountMenu /> : <HeaderAuthCta />}
           <button className="burger" aria-label="Open menu">
             <svg width="18" height="12" fill="none" stroke="#0B0C0E" strokeWidth="2">
               <path d="M0 1h18M0 6h18M0 11h18" />
