@@ -118,16 +118,13 @@ export default function AboutUsPage() {
               <p className="eyebrow">About Shriram Credit Company Limited</p>
               <h2>The Group&apos;s lending arm, brought online</h2>
               <p>
-                Shriram Credit Company Limited (SCCL) is a non-deposit taking, systemically
-                important Non-Banking Financial Company registered with the Reserve Bank of
-                India under Section 45-IA of the RBI Act, 1934. SCCL lets you borrow against
-                mutual funds and shares you already own, without selling a single unit — bringing
-                the Shriram Group&apos;s decades of lending experience to a fully online product.
-              </p>
-              <p>
-                Akhilesh Kumar Singh, the Group&apos;s Vice-Chairman, previously served as
-                Managing Director of SCCL — one of several Shriram entities he has led over his
-                30-year career with the Group.
+                Shriram Credit Company Limited is the holding company for the Capital Markets
+                businesses and serves as the lending entity for the Capital Markets businesses. It
+                provides strategic oversight across governance, leadership and talent management,
+                technology enablement, brand and marketing initiatives, and centralized support
+                functions. As the technology enabler for the Capital Markets businesses, Shriram
+                Credit drives fintech-led innovation and operational excellence across the Capital
+                Markets businesses.
               </p>
             </div>
             <div className="about-stats">
