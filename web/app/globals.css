@@ -114,6 +114,7 @@ nav.main .nav-dropdown-menu a:hover{background:var(--paper-2);color:var(--maroon
 .field .cc{display:flex;align-items:center;gap:6px;padding-inline:16px;font-size:15px;font-weight:700;color:#444;background:#F1EFEA;border-right:1.5px solid #E3E0D9}
 .field input{flex:1;border:0;outline:0;background:transparent;padding-inline:16px;font-family:var(--body);font-weight:600;font-size:17px;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
 .field input::placeholder{color:#B4AFA6;font-family:var(--body);letter-spacing:0}
+.field-label{display:block;font-size:13.5px;font-weight:600;color:var(--ink-soft);margin-bottom:8px}
 .tc{display:flex;gap:10px;align-items:flex-start;margin-bottom:18px;cursor:pointer}
 .tc input{width:19px;height:19px;accent-color:var(--yellow);margin-top:2px;flex-shrink:0;cursor:pointer}
 .tc span{font-size:12.5px;color:var(--muted);line-height:1.5}
@@ -311,6 +312,47 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 }
 @media (max-width:640px){
   .board-grid{grid-template-columns:1fr}
+}
+
+/* ── login ── */
+.login-split{display:flex;min-height:calc(100vh - var(--header))}
+.login-promo{flex:1 1 46%;background:linear-gradient(160deg,#FFDE7A 0%,var(--yellow) 55%,var(--yellow-deep) 100%);padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.login-phone{width:220px;background:#fff;border:3px solid var(--ink);border-radius:28px;padding:14px 14px 18px;box-shadow:12px 12px 0 rgba(11,12,14,.18)}
+.login-phone-notch{width:56px;height:6px;border-radius:4px;background:var(--ink);margin:0 auto 14px}
+.login-phone-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.login-phone-amount{font-family:var(--display);font-weight:800;font-size:26px;color:var(--ink);margin-top:6px;line-height:1.1}
+.login-phone-bar{height:8px;border-radius:5px;background:var(--paper-2);margin-top:16px;overflow:hidden}
+.login-phone-bar span{display:block;height:100%;width:64%;background:var(--yellow-deep);border-radius:5px}
+.login-phone-cta{margin-top:16px;display:block;text-align:center;background:var(--ink);color:#fff;font-weight:700;font-size:12.5px;padding:10px;border-radius:8px}
+
+.login-promo-card{background:#fff;border:1.5px solid var(--ink);border-radius:14px;padding:24px 24px 0;max-width:380px;width:100%;box-shadow:8px 8px 0 rgba(11,12,14,.14);overflow:hidden}
+.login-promo-card h3{font-size:19px}
+.login-promo-card ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.login-promo-card li{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-soft);font-weight:600}
+.login-promo-card .tick{background:var(--maroon)}
+.login-promo-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.login-promo-strip{background:var(--ink);color:#fff;margin:20px -24px 0;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;font-weight:700}
+.login-promo-strip:hover{background:var(--maroon)}
+
+.login-panel{flex:1 1 54%;display:flex;align-items:center;justify-content:center;padding:clamp(32px,4vw,56px) 24px}
+.login-form-wrap{width:100%;max-width:420px}
+.login-form-wrap h1{font-size:clamp(24px,2.4vw,30px);line-height:1.3}
+.login-form-wrap h1 em{display:block;font-style:normal;font-weight:800}
+.login-form-wrap > p{margin-top:10px;color:var(--muted);font-size:14.5px}
+.login-form-wrap form{margin-top:28px}
+
+.btn-login{width:100%;height:58px;font-size:16px;background:var(--ink);color:#fff;border-radius:11px}
+.btn-login:hover{background:var(--yellow);color:var(--ink)}
+.btn-login:disabled{background:var(--line);color:var(--muted);cursor:not-allowed}
+
+.login-link{background:none;border:0;padding:0;font:inherit;color:var(--maroon);font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.login-link:hover{color:var(--yellow-deep)}
+.login-form-wrap .terms{margin-top:16px;text-align:left}
+.login-form-wrap .terms a{color:var(--maroon);text-decoration:underline}
+
+@media (max-width:900px){
+  .login-split{flex-direction:column;min-height:0}
+  .login-promo{padding-block:40px}
 }
 
 /* ── footer ── */
