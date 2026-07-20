@@ -30,7 +30,7 @@ export default async function Header() {
             </div>
           </div>
           <a href="/investors">Investors</a>
-          <a href="#partner">Become a partner</a>
+          <a href="/partner">Become a partner</a>
         </nav>
         <div className="nav-right">
           {user ? (

@@ -241,6 +241,26 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 .band h2{font-size:clamp(24px,2.4vw,36px);max-width:18em}
 .band p{margin-top:8px;font-size:15px;color:var(--ink-soft)}
 
+/* ── partner promo (Shriram Fortune Partners app) ── */
+.partner-promo{
+  min-height:calc(100vh - var(--header));
+  display:flex;flex-direction:column;
+  background:linear-gradient(180deg,#FFCB2E 0%,#FFDE7A 28%,#FFF6DC 46%,#fff 62%,#fff 100%);
+  overflow:hidden;
+}
+.partner-promo .wrap{max-width:460px;width:100%;display:flex;flex-direction:column;flex:1;padding-top:clamp(28px,5vh,56px)}
+.partner-slide-wrap{overflow:hidden;flex:1}
+.partner-slides{display:flex;transition:transform .45s cubic-bezier(.65,0,.35,1);height:100%}
+.partner-slide{flex:0 0 100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding-inline:8px}
+.partner-slide h1{font-size:clamp(24px,3.6vw,32px);font-weight:800;color:var(--ink);line-height:1.28;max-width:15em}
+.partner-illustration{width:100%;max-width:360px;margin:clamp(20px,4vh,40px) auto clamp(16px,3vh,28px)}
+.partner-copy{font-size:15.5px;color:var(--ink-soft);line-height:1.55;max-width:26em;margin-inline:auto}
+.partner-dots{display:flex;justify-content:center;gap:8px;margin:clamp(20px,4vh,36px) 0}
+.partner-dot{width:22px;height:8px;border-radius:5px;border:1.5px solid rgba(11,12,14,.25);background:transparent;padding:0;transition:background .25s,border-color .25s,width .25s}
+.partner-dot[aria-selected="true"]{width:32px;background:var(--yellow-deep);border-color:var(--yellow-deep)}
+.partner-cta-wrap{padding:0 0 clamp(24px,5vh,44px)}
+.partner-cta{width:100%;height:58px;font-size:16.5px}
+
 /* ── footer ── */
 footer{background:var(--ink);color:#9C978F;padding-top:72px;font-size:14px}
 .f-top{display:grid;grid-template-columns:1.35fr 1fr 1fr .85fr .95fr;gap:clamp(24px,3vw,48px);padding-bottom:56px;border-bottom:1px solid var(--line-dark)}

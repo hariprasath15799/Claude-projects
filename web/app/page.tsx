@@ -255,7 +255,7 @@ export default function Home() {
             <h2>Do you advise clients on money? Partner with Shriram.</h2>
             <p>Join as a partner and earn from loans, mutual funds, fixed deposits and broking — all from one dashboard.</p>
           </div>
-          <a className="btn btn-dark" href="#">Become a partner</a>
+          <a className="btn btn-dark" href="/partner">Become a partner</a>
         </div>
       </div>
     </>
