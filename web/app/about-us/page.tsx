@@ -1,35 +1,4 @@
-const BOARD = [
-  {
-    name: "Akhilesh Kumar Singh",
-    role: "Vice-Chairman & Non-Executive Director",
-    bio: "With the Shriram Group since 1994. Formerly President of Shriram City Union Finance and Managing Director of Shriram Credit Company, Shriram Insight Share Brokers and Shriram Asset Management. B.Tech (IIT Kharagpur), PGDM (IIM Bangalore).",
-  },
-  {
-    name: "Subhasri Sriram",
-    role: "Non-Executive Director",
-    bio: "Managing Director & CEO, Shriram Capital Pvt. Ltd. 30 years across life insurance, general insurance, wealth management, broking and asset management. Formerly CFO, Shriram Capital Ltd.",
-  },
-  {
-    name: "Jasmit Singh Gujral",
-    role: "Non-Executive Director",
-    bio: "Executive Vice Chairman, Shriram General Insurance. With the Group since 1988; previously MD & CEO of Shriram Transport Finance and of Shriram General Insurance.",
-  },
-  {
-    name: "Ajay Thomas John",
-    role: "Non-Executive Director",
-    bio: "22+ years in financial services and fintech, leading digital transformation at Novac. Formerly at Bajaj Finance, HDFC Bank, ICICI Bank and CitiFinancial. MBA in Finance, Anna University.",
-  },
-  {
-    name: "Dr. Saleem K. Ali",
-    role: "Non-Executive & Independent Director",
-    bio: "Retired IPS officer with 36+ years in law enforcement, governance and corporate advisory. Former Director General of Police, Tripura, and Additional Director, CBI.",
-  },
-  {
-    name: "Rajasundaram Sudarshan",
-    role: "Non-Executive & Independent Director",
-    bio: "Chartered Accountant with 32+ years in banking and financial services. Co-Founder & COO, CreditMantri; formerly CFO of e-Serve International (TCS).",
-  },
-];
+import BoardDirectors from "@/components/BoardDirectors";
 
 export default function AboutUsPage() {
   return (
@@ -113,38 +82,18 @@ export default function AboutUsPage() {
       {/* ══ ABOUT SCCL ══ */}
       <section className="about">
         <div className="wrap">
-          <div className="about-grid">
-            <div className="about-copy">
-              <p className="eyebrow">About Shriram Credit Company Limited</p>
-              <h2>The Group&apos;s lending arm, brought online</h2>
-              <p>
-                Shriram Credit Company Limited is the holding company for the Capital Markets
-                businesses and serves as the lending entity for the Capital Markets businesses. It
-                provides strategic oversight across governance, leadership and talent management,
-                technology enablement, brand and marketing initiatives, and centralized support
-                functions. As the technology enabler for the Capital Markets businesses, Shriram
-                Credit drives fintech-led innovation and operational excellence across the Capital
-                Markets businesses.
-              </p>
-            </div>
-            <div className="about-stats">
-              <div className="astat">
-                <b>RBI registered</b>
-                <span className="astat-l">Certificate of Registration No. B-07.00709</span>
-              </div>
-              <div className="astat">
-                <b>Since 1980</b>
-                <span className="astat-l">CIN U65191TN1980PLC008215</span>
-              </div>
-              <div className="astat">
-                <b>Two products</b>
-                <span className="astat-l">Loan against mutual funds &amp; loan against shares</span>
-              </div>
-              <div className="astat">
-                <b>Chennai HQ</b>
-                <span className="astat-l">Registered office in T. Nagar; corporate office in Bengaluru</span>
-              </div>
-            </div>
+          <div className="about-copy">
+            <p className="eyebrow">About Shriram Credit Company Limited</p>
+            <h2>The Group&apos;s lending arm, brought online</h2>
+            <p>
+              Shriram Credit Company Limited is the holding company for the Capital Markets
+              businesses and serves as the lending entity for the Capital Markets businesses. It
+              provides strategic oversight across governance, leadership and talent management,
+              technology enablement, brand and marketing initiatives, and centralized support
+              functions. As the technology enabler for the Capital Markets businesses, Shriram
+              Credit drives fintech-led innovation and operational excellence across the Capital
+              Markets businesses.
+            </p>
           </div>
         </div>
       </section>
@@ -156,17 +105,10 @@ export default function AboutUsPage() {
             <div>
               <p className="eyebrow">Leadership</p>
               <h2>Board of directors</h2>
+              <p>Tap a director to read their full profile.</p>
             </div>
           </div>
-          <div className="board-grid">
-            {BOARD.map((member) => (
-              <div className="board-card" key={member.name}>
-                <h3>{member.name}</h3>
-                <span className="role">{member.role}</span>
-                <p>{member.bio}</p>
-              </div>
-            ))}
-          </div>
+          <BoardDirectors />
         </div>
       </section>
 
