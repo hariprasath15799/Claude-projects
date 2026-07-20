@@ -131,6 +131,8 @@ nav.main .nav-dropdown-menu a:hover{background:var(--paper-2);color:var(--maroon
 .field .cc{display:flex;align-items:center;gap:6px;padding-inline:16px;font-size:15px;font-weight:700;color:#444;background:#F1EFEA;border-right:1.5px solid #E3E0D9}
 .field input{flex:1;border:0;outline:0;background:transparent;padding-inline:16px;font-family:var(--body);font-weight:600;font-size:17px;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
 .field input::placeholder{color:#B4AFA6;font-family:var(--body);letter-spacing:0}
+.field select{flex:1;border:0;outline:0;background:transparent;padding-inline:16px;font-family:var(--body);font-weight:600;font-size:15px;color:var(--ink)}
+.field select:invalid,.field select option[value=""]{color:#B4AFA6}
 .field-label{display:block;font-size:13.5px;font-weight:600;color:var(--ink-soft);margin-bottom:8px}
 .tc{display:flex;gap:10px;align-items:flex-start;margin-bottom:18px;cursor:pointer}
 .tc input{width:19px;height:19px;accent-color:var(--yellow);margin-top:2px;flex-shrink:0;cursor:pointer}
@@ -365,6 +367,27 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 @media (max-width:900px){
   .login-split{flex-direction:column;min-height:0}
   .login-promo{padding-block:40px}
+}
+
+/* ── contact ── */
+.contact-split{display:flex;min-height:calc(100vh - var(--header));align-items:stretch}
+.contact-promo{flex:1 1 50%;background:linear-gradient(160deg,#FFF6DC 0%,#FFEFC2 100%);padding:clamp(40px,6vw,80px);display:flex;flex-direction:column;justify-content:center}
+.contact-promo h1{font-size:clamp(32px,4vw,52px);font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:14px}
+.contact-promo h1 .hl{color:var(--yellow-deep)}
+.contact-desc{margin-top:18px;font-size:16px;color:var(--ink-soft);max-width:32em;line-height:1.6}
+.contact-pills{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.contact-pill{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:1.5px solid var(--ink);background:#fff;font-size:14.5px;font-weight:700;color:var(--ink);transition:background .18s,color .18s}
+.contact-pill svg{width:18px;height:18px;flex-shrink:0}
+.contact-pill:hover{background:var(--ink);color:#fff}
+.contact-pill:hover svg{stroke:#fff}
+
+.contact-panel{flex:1 1 50%;display:flex;align-items:center;justify-content:center;padding:clamp(32px,4vw,56px) 24px;background:#fff}
+.contact-card{width:100%;max-width:460px}
+.contact-card form{margin-top:24px}
+
+@media (max-width:900px){
+  .contact-split{flex-direction:column;min-height:0}
+  .contact-promo{padding-block:48px}
 }
 
 /* ── footer ── */
