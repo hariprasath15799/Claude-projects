@@ -69,7 +69,7 @@ export default function LoginPage() {
       type: "email",
     });
     if (verifyError) throw verifyError;
-    router.push("/account");
+    router.push("/");
     router.refresh();
   }
 
