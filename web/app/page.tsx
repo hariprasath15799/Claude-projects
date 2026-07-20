@@ -55,8 +55,17 @@ export default function Home() {
                 <path d="M3 8h18M3 8v10a1 1 0 001 1h16a1 1 0 001-1V8M3 8l2-3h14l2 3" />
                 <circle cx="12" cy="14" r="2.5" />
               </svg>
-              <h3>Loans</h3>
-              <p>Loan against mutual funds and loan against shares. Pledge online and use the money whenever you need it.</p>
+              <h3>LAMF</h3>
+              <p>Loan against mutual funds. Pledge your MF units online and get money without selling them.</p>
+              <span className="go">Explore <span>→</span></span>
+            </a>
+            <a className="p-card" href="#">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3l7 4v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              <h3>LAS</h3>
+              <p>Loan against shares. Pledge the shares and bonds you already own and get cash the same day.</p>
               <span className="go">Explore <span>→</span></span>
             </a>
             <a className="p-card" href="#">
