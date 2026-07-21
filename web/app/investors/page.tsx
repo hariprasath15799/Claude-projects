@@ -56,7 +56,6 @@ export default function InvestorsPage() {
       <div className="wrap">
         <div className="sec-head">
           <div>
-            <p className="eyebrow">Investors</p>
             <h2>Investor information &amp; disclosures</h2>
             <p>
               Statutory policies, annual reports and annual returns filed by Shriram Credit

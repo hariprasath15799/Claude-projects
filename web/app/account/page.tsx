@@ -21,8 +21,7 @@ export default async function AccountPage() {
   return (
     <section style={{ background: "#fff", display: "flex", justifyContent: "center", padding: "clamp(64px,7vw,104px) 20px" }}>
       <div style={{ width: "100%", maxWidth: 440 }}>
-        <p className="eyebrow">Your account</p>
-        <h1 style={{ marginTop: 12 }}>Welcome back</h1>
+        <h1>Welcome back</h1>
         <div className="badge" style={{ display: "inline-flex", marginTop: 22, marginBottom: 22 }}>
           +91 {profile?.phone ?? "—"}
         </div>

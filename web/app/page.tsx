@@ -37,7 +37,6 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <p className="eyebrow">What we do</p>
               <h2>Loans, broking, mutual funds and deposits — from one trusted group</h2>
               <p>
                 Shriram Credit Company Limited offers many kinds of financial services for
@@ -137,7 +136,6 @@ export default function Home() {
         <div className="wrap">
           <div className="about-grid">
             <div className="about-copy">
-              <p className="eyebrow">About the Shriram Group</p>
               <h2>Trusted by Indian families for over 50 years</h2>
               <p>
                 The Shriram Group started in 1974 with one belief — that ordinary Indians, small
@@ -200,7 +198,6 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <p className="eyebrow">Support</p>
               <h2>Loan against mutual funds — your questions answered</h2>
             </div>
           </div>

@@ -6,7 +6,6 @@ export default function BlogsPage() {
       <div className="wrap">
         <div className="sec-head">
           <div>
-            <p className="eyebrow">Learning Lounge</p>
             <h2>Simple guides to smarter borrowing and credit decisions</h2>
             <p>
               Plain-English explainers on loans against mutual funds and shares, credit scores,

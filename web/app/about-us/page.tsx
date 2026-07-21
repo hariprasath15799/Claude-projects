@@ -6,7 +6,6 @@ export default function AboutUsPage() {
       {/* ══ HERO ══ */}
       <section className="about-hero">
         <div className="wrap">
-          <p className="eyebrow">About us</p>
           <h1>Enriching your financial stability</h1>
           <p className="tagline">
             The Shriram Group has spent over five decades building financial products for
@@ -22,7 +21,6 @@ export default function AboutUsPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <p className="eyebrow">What drives us</p>
               <h2>Vision &amp; mission</h2>
             </div>
           </div>
@@ -83,7 +81,6 @@ export default function AboutUsPage() {
       <section className="about about-full">
         <div className="wrap">
           <div className="about-copy">
-            <p className="eyebrow">About Shriram Credit Company Limited</p>
             <h2>The Group&apos;s lending arm, brought online</h2>
             <p>
               Shriram Credit Company Limited is the holding company for the Capital Markets
@@ -103,7 +100,6 @@ export default function AboutUsPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <p className="eyebrow">Leadership</p>
               <h2>Board of directors</h2>
               <p>Tap a director to read their full profile.</p>
             </div>

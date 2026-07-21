@@ -17,7 +17,6 @@ export default async function PartnerPage() {
       <section className="app-hero">
         <div className="wrap app-hero-row">
           <div className="app-hero-copy">
-            <p className="eyebrow">Shriram Fortune Partners</p>
             <h1>Your trusted financial partner for all your finance needs</h1>
             <p className="tagline">
               Increase your earnings by providing investment and insurance — all in one place.
@@ -50,7 +49,6 @@ export default async function PartnerPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <p className="eyebrow">Why partners choose us</p>
               <h2>Everything you need to grow your income</h2>
               <p>
                 Shriram Fortune Partners brings investment and insurance products together in one

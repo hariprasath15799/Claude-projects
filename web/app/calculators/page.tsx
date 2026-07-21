@@ -42,7 +42,6 @@ export default function CalculatorsPage() {
       <div className="wrap">
         <div className="sec-head">
           <div>
-            <p className="eyebrow">Calculators</p>
             <h2>Loan against mutual funds calculator</h2>
             <p>
               See how much you could borrow against your mutual fund holdings, and compare

@@ -4,7 +4,6 @@ export default function ContactPage() {
   return (
     <div className="contact-split">
       <div className="contact-promo">
-        <p className="eyebrow">Contact us</p>
         <h1>
           How can we <span className="hl">help you?</span>
         </h1>
