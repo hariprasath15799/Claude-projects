@@ -62,25 +62,27 @@ export default function CalculatorsPage() {
 
             <div className="calc-field">
               <label>Fund type</label>
-              <div className="calc-tabs" role="tablist" aria-label="Fund type">
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={fundType === "equity"}
-                  className={fundType === "equity" ? "calc-tab active" : "calc-tab"}
-                  onClick={() => setFundType("equity")}
-                >
+              <div className="calc-radios" role="radiogroup" aria-label="Fund type">
+                <label className={fundType === "equity" ? "calc-radio active" : "calc-radio"}>
+                  <input
+                    type="radio"
+                    name="fundType"
+                    value="equity"
+                    checked={fundType === "equity"}
+                    onChange={() => setFundType("equity")}
+                  />
                   Equity fund
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={fundType === "debt"}
-                  className={fundType === "debt" ? "calc-tab active" : "calc-tab"}
-                  onClick={() => setFundType("debt")}
-                >
+                </label>
+                <label className={fundType === "debt" ? "calc-radio active" : "calc-radio"}>
+                  <input
+                    type="radio"
+                    name="fundType"
+                    value="debt"
+                    checked={fundType === "debt"}
+                    onChange={() => setFundType("debt")}
+                  />
                   Debt fund
-                </button>
+                </label>
               </div>
             </div>
 

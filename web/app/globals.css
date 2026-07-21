@@ -267,6 +267,11 @@ details p{margin:12px 0 0 44px;color:var(--ink-soft);font-size:15px;max-width:60
 .calc-tab{flex:1;padding:11px;border-radius:var(--radius);border:1.5px solid var(--ink);background:#fff;font-weight:700;font-size:14px;color:var(--ink);text-align:center;transition:background .18s,color .18s}
 .calc-tab.active{background:var(--ink);color:#fff}
 
+.calc-radios{display:flex;gap:22px;margin-bottom:22px}
+.calc-field .calc-radio{display:inline-flex;justify-content:flex-start;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--ink-soft);cursor:pointer}
+.calc-radio input[type="radio"]{width:17px;height:17px;accent-color:var(--yellow-deep)}
+.calc-radio.active{color:var(--ink)}
+
 .calc-result{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:22px}
 .calc-result-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line)}
 .calc-result-row:last-child{border-bottom:0}
