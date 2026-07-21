@@ -108,7 +108,7 @@ nav.main .nav-dropdown-menu a:hover{background:var(--paper-2);color:var(--maroon
 .hero-left{flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(18px,2.4vh,28px)}
 .slider{overflow:hidden}
 .slides{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
-.slide{flex:0 0 100%;min-width:0;display:flex;flex-direction:column;gap:clamp(12px,1.8vh,20px)}
+.slide{flex:0 0 100%;min-width:0;display:flex;flex-direction:column;gap:clamp(12px,1.8vh,20px);overflow:hidden}
 .dots{display:flex;gap:10px}
 .dot{width:34px;height:5px;border-radius:5px;border:0;background:rgba(11,12,14,.16);padding:0;transition:background .25s,width .25s}
 .dot[aria-selected="true"]{background:var(--ink);width:52px}
@@ -182,7 +182,7 @@ section{padding:clamp(64px,7vw,104px) 0}
 .steps-box{border:1.5px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr)}
 .step{padding:30px 26px 32px;border-right:1.5px solid var(--ink);position:relative}
 .step:last-child{border-right:0}
-.step-no{display:block;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--yellow-deep);text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:var(--yellow-deep)}
+.step-no{display:block;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.01em;color:var(--yellow-deep)}
 .step h3{font-size:19px;margin-top:16px}
 .step p{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.55}
 .step-arrow{position:absolute;top:26px;left:-16px;width:32px;height:32px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;z-index:2}
