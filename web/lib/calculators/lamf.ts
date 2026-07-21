@@ -1,11 +1,19 @@
 // Loan Against Mutual Funds calculator math.
-// LTV of 50% matches this site's own FAQ copy ("up to 50% of the value of
-// your equity funds"). EMI uses the standard reducing-balance formula;
-// the interest-only option mirrors this product's actual pitch elsewhere
-// on the site ("pay interest only on the amount you use").
+// LTV matches this site's own FAQ copy ("up to 50% of the value of your
+// equity funds and up to 75% of the value of your debt funds"). EMI uses
+// the standard reducing-balance formula; the interest-only option mirrors
+// this product's actual pitch elsewhere on the site ("pay interest only
+// on the amount you use").
 
-export function eligibleLoanAmount(mfValue: number): number {
-  return mfValue * 0.5;
+export type FundType = "equity" | "debt";
+
+export const LTV_BY_FUND_TYPE: Record<FundType, number> = {
+  equity: 0.5,
+  debt: 0.75,
+};
+
+export function eligibleLoanAmount(mfValue: number, fundType: FundType): number {
+  return mfValue * LTV_BY_FUND_TYPE[fundType];
 }
 
 export function calculateEmi(principal: number, annualRatePct: number, tenureMonths: number): number {

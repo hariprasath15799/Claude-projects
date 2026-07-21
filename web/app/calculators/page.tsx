@@ -6,18 +6,21 @@ import {
   calculateInterestOnlyMonthly,
   eligibleLoanAmount,
   formatINR,
+  LTV_BY_FUND_TYPE,
+  type FundType,
 } from "@/lib/calculators/lamf";
 
 type RepaymentMode = "emi" | "interest-only";
 
 export default function CalculatorsPage() {
   const [mfValue, setMfValue] = useState(1000000);
+  const [fundType, setFundType] = useState<FundType>("equity");
   const [tenure, setTenure] = useState(12);
   const [rate, setRate] = useState(10.5);
   const [mode, setMode] = useState<RepaymentMode>("emi");
 
   const results = useMemo(() => {
-    const principal = eligibleLoanAmount(mfValue);
+    const principal = eligibleLoanAmount(mfValue, fundType);
 
     if (mode === "emi") {
       const emi = calculateEmi(principal, rate, tenure);
@@ -30,7 +33,7 @@ export default function CalculatorsPage() {
     const totalInterest = monthly * tenure;
     const totalPayable = principal + totalInterest;
     return { principal, monthly, totalInterest, totalPayable };
-  }, [mfValue, tenure, rate, mode]);
+  }, [mfValue, fundType, tenure, rate, mode]);
 
   const interestSharePct = Math.min(
     100,
@@ -55,6 +58,30 @@ export default function CalculatorsPage() {
             <div className="card-head">
               <h2>Your details</h2>
               <p>Move the sliders or type a value directly.</p>
+            </div>
+
+            <div className="calc-field">
+              <label>Fund type</label>
+              <div className="calc-tabs" role="tablist" aria-label="Fund type">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={fundType === "equity"}
+                  className={fundType === "equity" ? "calc-tab active" : "calc-tab"}
+                  onClick={() => setFundType("equity")}
+                >
+                  Equity fund
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={fundType === "debt"}
+                  className={fundType === "debt" ? "calc-tab active" : "calc-tab"}
+                  onClick={() => setFundType("debt")}
+                >
+                  Debt fund
+                </button>
+              </div>
             </div>
 
             <div className="calc-field">
@@ -121,7 +148,8 @@ export default function CalculatorsPage() {
 
             <p className="micro" style={{ textAlign: "left" }}>
               *Indicative rate for illustration only, subject to credit assessment. Eligible loan
-              amount assumes up to 50% of your mutual fund value.
+              amount assumes up to {LTV_BY_FUND_TYPE[fundType] * 100}% of your{" "}
+              {fundType === "equity" ? "equity" : "debt"} fund value.
             </p>
           </div>
 
