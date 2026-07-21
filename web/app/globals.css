@@ -163,7 +163,7 @@ section{padding:clamp(64px,7vw,104px) 0}
 /* ── products ── */
 .products{background:var(--paper-2);border-block:1px solid var(--line)}
 .p-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1.5px solid var(--ink);background:#fff}
-.p-card{padding:32px 26px 28px;border-right:1.5px solid var(--ink);display:flex;flex-direction:column;min-height:270px;transition:background .25s}
+.p-card{padding:32px 26px 28px;border-right:1.5px solid var(--ink);display:flex;flex-direction:column;min-height:270px;transition:background .25s;position:relative}
 .p-card:last-child{border-right:0}
 .p-card:hover{background:var(--yellow)}
 .p-card svg{width:30px;height:30px;stroke:var(--maroon);fill:none;stroke-width:1.6;margin-bottom:auto}
@@ -174,6 +174,43 @@ section{padding:clamp(64px,7vw,104px) 0}
 .go{font-family:var(--body);font-size:12.5px;font-weight:700;letter-spacing:.055em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .go span{transition:transform .2s}
 .p-card:hover .go span{transform:translateX(5px)}
+.tag-upcoming{position:absolute;top:18px;right:18px;background:var(--ink);color:#fff;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.p-card:hover .tag-upcoming{background:var(--ink)}
+
+/* ── steps ── */
+.steps{padding-block:clamp(56px,7vw,96px)}
+.steps-box{border:1.5px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr)}
+.step{padding:30px 26px 32px;border-right:1.5px solid var(--ink);position:relative}
+.step:last-child{border-right:0}
+.step-no{display:block;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--yellow-deep);text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:var(--yellow-deep)}
+.step h3{font-size:19px;margin-top:16px}
+.step p{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.55}
+.step-arrow{position:absolute;top:26px;left:-16px;width:32px;height:32px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;z-index:2}
+.step-arrow svg{width:14px;height:14px;stroke:var(--ink);fill:none;stroke-width:2}
+.steps-cta{display:flex;justify-content:center;margin-top:40px}
+
+/* ── compare: redeem vs pledge ── */
+.compare{background:var(--ink);color:#fff;padding-block:clamp(56px,7vw,96px)}
+.compare .sec-head h2{color:#fff}
+.compare .sec-head p{color:#9C978F}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.compare-card{border-radius:16px;padding:32px}
+.compare-bad{background:#1A1B1E}
+.compare-good{background:var(--yellow)}
+.compare-card h3{font-size:19px;margin-bottom:22px}
+.compare-bad h3{color:#B8B4AC}
+.compare-good h3{color:var(--ink)}
+.compare-card ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+.compare-card li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;line-height:1.5}
+.compare-bad li{color:#D8D5CE}
+.compare-good li{color:var(--ink);font-weight:600}
+.ic-x,.ic-check{flex:0 0 auto;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.ic-x{background:#3A3B3F}
+.ic-x svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:2.4}
+.ic-check{background:var(--ink)}
+.ic-check svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:2.6}
+.compare-cta{display:flex;justify-content:center;margin-top:40px}
+.btn-outline-light{border-color:#fff;color:#fff}
 
 /* ── metrics band ── */
 .metrics{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:clamp(56px,6vw,88px) 0}
@@ -458,6 +495,10 @@ footer a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
   .m:nth-child(3),.m:nth-child(4){padding-top:8px}
   .faq-grid{grid-template-columns:1fr}
   .faq-aside{position:static}
+  .steps-box{grid-template-columns:1fr 1fr}
+  .step:nth-child(2n){border-right:0}
+  .step:nth-child(1),.step:nth-child(2){border-bottom:1.5px solid var(--ink)}
+  .compare-grid{grid-template-columns:1fr}
 }
 @media (max-width:640px){
   .p-grid{grid-template-columns:1fr}
@@ -467,5 +508,9 @@ footer a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
   .f-top{grid-template-columns:1fr 1fr}
   .card{padding:22px 18px;box-shadow:6px 6px 0 var(--ink)}
   .hero-stats{gap:18px}
+  .steps-box{grid-template-columns:1fr}
+  .step{border-right:0!important;border-bottom:1.5px solid var(--ink)}
+  .step:last-child{border-bottom:0}
+  .step-arrow{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}

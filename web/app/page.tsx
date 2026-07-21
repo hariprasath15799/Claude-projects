@@ -32,6 +32,171 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══ STEPS ══ */}
+      <section className="steps">
+        <div className="wrap">
+          <div className="sec-head">
+            <div>
+              <h2>From pledge to payout, four steps.</h2>
+              <p>
+                No branch visits, no unit redemption, no five-day wait. The whole process runs on
+                your registrar record.
+              </p>
+            </div>
+          </div>
+          <div className="steps-box">
+            <div className="step">
+              <span className="step-no">01</span>
+              <h3>Pledge your units</h3>
+              <p>
+                Select eligible mutual fund folios. We raise a lien with CAMS or KFintech — the
+                units never leave your name.
+              </p>
+            </div>
+            <div className="step">
+              <span className="step-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 12h16M14 6l6 6-6 6" />
+                </svg>
+              </span>
+              <span className="step-no">02</span>
+              <h3>Get sanctioned</h3>
+              <p>
+                We value the pledged portfolio and open a credit line — up to 50% of equity
+                schemes, 75% of debt schemes.
+              </p>
+            </div>
+            <div className="step">
+              <span className="step-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 12h16M14 6l6 6-6 6" />
+                </svg>
+              </span>
+              <span className="step-no">03</span>
+              <h3>Draw what you need</h3>
+              <p>
+                It&apos;s a revolving overdraft. Draw any amount up to your limit, as many times as
+                you like, and interest runs only on the drawn balance.
+              </p>
+            </div>
+            <div className="step">
+              <span className="step-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 12h16M14 6l6 6-6 6" />
+                </svg>
+              </span>
+              <span className="step-no">04</span>
+              <h3>Repay, any time</h3>
+              <p>
+                Clear the balance whenever it suits you, at no foreclosure cost. Request a lien
+                release and your units are free again in 1–2 days.
+              </p>
+            </div>
+          </div>
+          <div className="steps-cta">
+            <a className="btn btn-yellow" href="#">
+              Start your LAMF journey <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ COMPARE: REDEEM VS PLEDGE ══ */}
+      <section className="compare">
+        <div className="wrap">
+          <div className="sec-head">
+            <div>
+              <h2>Selling your mutual funds costs more than it looks.</h2>
+              <p>
+                A loan against mutual funds is built to solve the same cash need, without asking
+                you to break a portfolio you built on purpose.
+              </p>
+            </div>
+          </div>
+          <div className="compare-grid">
+            <div className="compare-card compare-bad">
+              <h3>If you redeem instead</h3>
+              <ul>
+                <li>
+                  <span className="ic-x" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                  </span>
+                  Compounding on those units stops the day you exit
+                </li>
+                <li>
+                  <span className="ic-x" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                  </span>
+                  Capital gains tax is triggered on the redeemed units
+                </li>
+                <li>
+                  <span className="ic-x" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                  </span>
+                  If markets recover afterward, that upside isn&apos;t yours anymore
+                </li>
+                <li>
+                  <span className="ic-x" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                  </span>
+                  Rebuilding the position later means fresh entry loads and timing risk
+                </li>
+              </ul>
+            </div>
+            <div className="compare-card compare-good">
+              <h3>If you pledge with us</h3>
+              <ul>
+                <li>
+                  <span className="ic-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  Units stay invested and keep compounding throughout
+                </li>
+                <li>
+                  <span className="ic-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  No sale means no capital gains tax event
+                </li>
+                <li>
+                  <span className="ic-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  Every rupee of market upside still belongs to you
+                </li>
+                <li>
+                  <span className="ic-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  Interest runs only on what you draw, not the full limit
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="compare-cta">
+            <a className="btn btn-outline-light" href="#">
+              Explore the LAMF product page <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ══ PRODUCTS ══ */}
       <section className="products" id="products">
         <div className="wrap">
@@ -59,6 +224,7 @@ export default function Home() {
               <span className="go">Explore <span>→</span></span>
             </a>
             <a className="p-card" href="#">
+              <span className="tag-upcoming">Upcoming</span>
               <svg viewBox="0 0 24 24">
                 <path d="M12 3l7 4v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4z" />
                 <path d="M9 12l2 2 4-4" />
@@ -198,7 +364,7 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <h2>Loan against mutual funds — your questions answered</h2>
+              <h2>Got Questions?</h2>
             </div>
           </div>
           <div className="faq-grid">
