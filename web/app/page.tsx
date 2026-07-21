@@ -202,12 +202,12 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <h2>Loans, broking, mutual funds and deposits — from one trusted group</h2>
+              <h2>Loans, broking and mutual funds — from one trusted group</h2>
               <p>
                 Shriram Credit Company Limited offers many kinds of financial services for
                 individuals and businesses. Registered with the RBI in 2002, SCCL gives secured
                 loans to its borrowers. Its subsidiary and associate companies handle share
-                broking, mutual funds and fixed deposits.
+                broking and mutual funds.
               </p>
             </div>
             <a className="btn btn-outline" href="#">See all products</a>
@@ -248,15 +248,6 @@ export default function Home() {
               </svg>
               <h3>Mutual funds</h3>
               <p>Start a SIP or invest a lump sum. All your schemes and statements stay in one account.</p>
-              <span className="go">Explore <span>→</span></span>
-            </a>
-            <a className="p-card" href="#">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="6" width="18" height="13" rx="2" />
-                <path d="M3 10h18M7 15h4" />
-              </svg>
-              <h3>Fixed deposits</h3>
-              <p>Company and corporate fixed deposits. Choose your tenure and how often you want the interest paid.</p>
               <span className="go">Explore <span>→</span></span>
             </a>
           </div>
